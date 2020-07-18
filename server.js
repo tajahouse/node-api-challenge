@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 
 const ActionRouter = require("./actions/actionRouter");
-const ProjectModel = require('./data/helpers/projectModel');
+const ProjectRouter = require("./projects/projectRouter");
 
 server.use(logger);
 server.use(express.json());
@@ -12,7 +12,7 @@ server.get("/", (req, res) =>{
 });
 
 server.use("/api/actions", ActionRouter);
-// server.use("/api/projects", ProjectModel);
+server.use("/api/projects", ProjectRouter);
 
 function logger(req, res, next){
     console.log(`${req.method} ${req.originalUrl} at ${new Date().toString()}`)
