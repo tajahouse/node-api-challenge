@@ -12,3 +12,15 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+
+
+//^ I Like this! LOL
+const server = require("./server");
+const PORT = process.env.PORT || 4400;
+
+server.listen(PORT, () => {
+    console.log(`Server is listening at http://localhost:${PORT}`)
+});
+
+module.exports = server;
